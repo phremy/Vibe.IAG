@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Music Player - Lecteur de musique Deezer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title">
+        <span class="title-icon">🎵</span>
+        Vibe Music Player
+      </h1>
+      <p class="app-subtitle">Découvrez et écoutez de la musique avec Deezer</p>
+    </header>
+
+    <main class="app-main">
+      <form class="search-bar" id="searchForm">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Rechercher une chanson, un artiste ou un album..."
+            autocomplete="off"
+          />
+          <div class="search-loading" id="searchLoading" style="display: none;">
+            <div class="mini-spinner"></div>
+          </div>
+        </div>
+      </form>
+
+      <div class="error-message" id="errorMessage" style="display: none;"></div>
+
+      <div class="tracks-container" id="tracksContainer">
+        <div class="empty-state">
+          <div class="empty-icon">🎧</div>
+          <h2>Commencez votre recherche</h2>
+          <p>Tapez le nom d'une chanson, d'un artiste ou d'un album</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="player" id="player" style="display: none;">
+      <div class="player-content">
+        <div class="player-info">
+          <img class="player-image" id="playerImage" src="" alt="Album cover">
+          <div class="player-details">
+            <h3 class="player-title" id="playerTitle"></h3>
+            <p class="player-artist" id="playerArtist"></p>
+          </div>
+        </div>
+        <div class="player-controls">
+          <button class="player-button" id="playPauseButton" aria-label="Play/Pause">
+            <span id="playPauseIcon">▶</span>
+          </button>
+        </div>
+        <audio id="audioPlayer" preload="metadata"></audio>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
